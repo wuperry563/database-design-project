@@ -1,0 +1,2 @@
+frontend/node_modules/**
+express-postgres/node_modules/**
