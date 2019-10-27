@@ -1,2 +1,2 @@
-FROM postgres:10.10
+FROM postgres:12
 

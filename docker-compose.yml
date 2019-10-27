@@ -11,6 +11,6 @@ services:
       - POSTGRES_PASSWORD:pg
     volumes:
       - my_dbdata:/var/lib/postgresqlnew/data
-      #- ./database/init.sql:/docker-entrypoint-initdb.d/init.sql
+      - ./database/dump.sql:/docker-entrypoint-initdb.d/dump.sql
 volumes:
   my_dbdata:
