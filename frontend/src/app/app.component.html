@@ -1,11 +1,7 @@
-<h1>Welcome to {{title}} App!</h1>
+<nav>
+    <a routerLink="/check-in">Check in a book</a>
+    <a routerLink="/search">Search for a book</a>
+  </nav>
 
-<mat-slider min="1" max="100" step="1" value="1"></mat-slider>
-<div class="example-container">
-    <h2>Search for a book on ISBN, Author, or Name</h2>
-    <mat-form-field>
-      <input matInput placeholder="Search Query">
-    </mat-form-field>
-    <app-search-results> </app-search-results>
-  </div>
-  
+<h1>{{title}}</h1>
+<router-outlet></router-outlet>

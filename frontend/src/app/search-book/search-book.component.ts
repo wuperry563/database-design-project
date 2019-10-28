@@ -1,14 +1,14 @@
-import { Component } from '@angular/core';
-import { LibraryService } from './library.service';
-import { Book } from './book';
+import { Component, OnInit } from '@angular/core';
+import { LibraryService } from '../library.service';
+import { Book } from '../book';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  selector: 'app-search-book',
+  templateUrl: './search-book.component.html',
+  styleUrls: ['./search-book.component.css']
 })
-export class AppComponent {
-  title = 'Library'
+export class SearchBookComponent implements OnInit {
+  title = 'Search for a book'
   searchString: String
   results: Book[]
   isbn: String
@@ -16,6 +16,9 @@ export class AppComponent {
   shouldShowCheckout: Boolean
 
   constructor(private libraryService: LibraryService) { }
+
+  ngOnInit() {
+  }
 
   search(searchString: String){
     console.log(searchString)
@@ -33,12 +36,13 @@ export class AppComponent {
   checkout(cardNo: String){
     console.log(this.isbn)
     console.log(cardNo)
+    this.error = null
     this.libraryService.checkout(this.isbn,cardNo).subscribe(
       (data)=>{
       console.log(data)},
       error => {
         console.log(this.error)
-        this.error = error }// error path
+        this.error = error }
       )
   }
 

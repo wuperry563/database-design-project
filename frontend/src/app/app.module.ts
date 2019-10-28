@@ -10,11 +10,16 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SearchResultsComponent } from './search-results/search-results.component';
+import { AppRoutingModule } from './app-routing.module';
+import { CheckInComponent } from './check-in/check-in.component';
+import { SearchBookComponent } from './search-book/search-book.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    SearchResultsComponent
+    SearchResultsComponent,
+    CheckInComponent,
+    SearchBookComponent
   ],
   imports: [
     BrowserModule,
@@ -24,7 +29,8 @@ import { SearchResultsComponent } from './search-results/search-results.componen
     MatInputModule,
     MatButtonModule,
     MatButtonToggleModule,
-    HttpClientModule
+    HttpClientModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

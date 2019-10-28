@@ -40,6 +40,21 @@ const searchQuery = (request, response) => {
     })
 }
 
+const checkout = (request, response) => {
+  const queryString = `
+  insert into book_loan(isbn,borrower_id,date_in)
+  values(\'${request.query.isbn}\', ${request.query.cardId} , null)`
+  pool.query(queryString, (error, results)=>{
+      if (error) {
+          response.status(400).json(error)
+        }
+        else{
+          response.status(200).json(results.rows)
+        }
+  })
+}
+
+
 module.exports={
-    getUsers, searchQuery
+    getUsers, searchQuery, checkout
 }

@@ -1,0 +1,24 @@
+<div class="example-container">
+        <h2>Search for a book on ISBN, Author, or Name</h2>
+        <mat-form-field>
+          <input #searchString matInput placeholder="Search Query" (keyup.enter)="search(searchString.value)">
+        </mat-form-field>
+        <button (click)="search(searchString.value)" mat-raised-button color="primary">Search!</button>
+      </div>
+    
+    <div *ngIf="shouldShowCheckout">
+        <mat-form-field>
+          <input #cardNo matInput placeholder="Card Number">
+        </mat-form-field>
+        <button (click)="checkout(cardNo.value)" mat-raised-button color="primary">Checkout!</button>
+        <div *ngIf="error; then thenBlock else elseBlock"></div>
+        <ng-template #thenBlock><h5> Cannot check out because: {{error.error.constraint}}</h5></ng-template>
+        <ng-template #elseBlock><h5> Checkout successful!</h5></ng-template>
+    </div>
+    
+    <div *ngFor= "let result of results">
+        {{result.isbn}}
+        {{result.name}}
+        {{result.title}}
+        <button (click)="showCheckout(result.isbn)" *ngIf="result.can_checkout" mat-raised-button color="primary" >Checkout</button>
+    </div>

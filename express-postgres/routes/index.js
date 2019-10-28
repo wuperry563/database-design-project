@@ -11,4 +11,6 @@ router.get('/users', db.getUsers)
 
 router.get('/search', db.searchQuery)
 
+router.get('/checkout', db.checkout)
+
 module.exports = router;
