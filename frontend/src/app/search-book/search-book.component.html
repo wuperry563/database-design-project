@@ -10,10 +10,8 @@
         <mat-form-field>
           <input #cardNo matInput placeholder="Card Number">
         </mat-form-field>
-        <button (click)="checkout(cardNo.value)" mat-raised-button color="primary">Checkout!</button>
-        <div *ngIf="error; then thenBlock else elseBlock"></div>
-        <ng-template #thenBlock><h5> Cannot check out because: {{error.error.constraint}}</h5></ng-template>
-        <ng-template #elseBlock><h5> Checkout successful!</h5></ng-template>
+        <button (click)="isAbleToCheckout(cardNo.value)" mat-raised-button color="primary">Checkout!</button>
+        {{message}}
     </div>
     
     <div *ngFor= "let result of results">

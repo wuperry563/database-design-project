@@ -16,4 +16,10 @@ export class LibraryService {
   public checkout(isbn: String, cardNo: String){
     return this.httpClient.get(`http://localhost:3000/api/checkout?isbn=${isbn}&cardId=${cardNo}`)
   }
+
+  public executeQuery(query: any)
+  {
+    console.log(query)
+    return this.httpClient.post("http://localhost:3000/api/sql", query)
+  }
 }

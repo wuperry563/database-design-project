@@ -1,0 +1,100 @@
+<div class="container">
+  <div [hidden]="submitted">
+    <h1>Hero Form</h1>
+    <form (ngSubmit)="onSubmit()" #heroForm="ngForm">
+      <div class="form-group">
+        <label for="firstName">First Name</label>
+        <input type="text" class="form-control" id="firstName"
+               required
+               [(ngModel)]="model.firstName" name="firstName"
+               #firstName="ngModel">
+        <div [hidden]="firstName.valid || firstName.pristine"
+             class="alert alert-danger">
+          First Name is required
+        </div>
+      </div>
+
+      <label for="lastName">Last Name</label>
+        <input type="text" class="form-control" id="lastName"
+               required
+               [(ngModel)]="model.lastName" name="lastName"
+               #lastName="ngModel">
+        <div [hidden]="lastName.valid || lastName.pristine"
+             class="alert alert-danger">
+          Last Name is required
+        </div>
+
+        <label for="phone">Phone</label>
+        <input type="text" class="form-control" id="phone"
+               required
+               [(ngModel)]="model.phone" name="phone"
+               #phone="ngModel">
+        <div [hidden]="phone.valid || phone.pristine"
+             class="alert alert-danger">
+             Phone is required
+        </div>
+
+        <label for="email">Email</label>
+        <input type="text" class="form-control" id="email"
+               required
+               [(ngModel)]="model.email" name="email"
+               #email="ngModel">
+        <div [hidden]="email.valid || email.pristine"
+             class="alert alert-danger">
+             email is required
+        </div>
+
+        <label for="ssn">SSN</label>
+        <input type="text" class="form-control" id="ssn"
+               required
+               [(ngModel)]="model.ssn" name="ssn"
+               #ssn="ngModel">
+        <div [hidden]="ssn.valid || ssn.pristine"
+             class="alert alert-danger">
+             ssn is required
+        </div>
+
+        <label for="address1">Address Line 1</label>
+        <input type="text" class="form-control" id="address1"
+               required
+               [(ngModel)]="model.address1" name="address1"
+               #address1="ngModel">
+        <div [hidden]="address1.valid || address1.pristine"
+             class="alert alert-danger">
+             address1 is required
+        </div>
+
+        <label for="city">City</label>
+        <input type="text" class="form-control" id="city"
+               required
+               [(ngModel)]="model.city" name="city"
+               #city="ngModel">
+        <div [hidden]="city.valid || city.pristine"
+             class="alert alert-danger">
+             city is required
+        </div>
+
+        <label for="state">State</label>
+        <input type="text" class="form-control" id="state"
+               required
+               [(ngModel)]="model.state" name="state"
+               #state="ngModel">
+        <div [hidden]="state.valid || state.pristine"
+             class="alert alert-danger">
+             state is required
+        </div>
+
+        <label for="zip">Zip</label>
+        <input type="text" class="form-control" id="zip"
+               required
+               [(ngModel)]="model.zip" name="zip"
+               #zip="ngModel">
+        <div [hidden]="zip.valid || zip.pristine"
+             class="alert alert-danger">
+             zip is required
+        </div>
+        {{message}}
+      <button type="submit" class="btn btn-success" [disabled]="!heroForm.form.valid">Submit</button>
+    </form>
+  </div>
+</div>

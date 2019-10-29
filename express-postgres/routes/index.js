@@ -13,4 +13,6 @@ router.get('/search', db.searchQuery)
 
 router.get('/checkout', db.checkout)
 
+router.post('/sql', db.query)
+
 module.exports = router;

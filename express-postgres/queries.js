@@ -54,7 +54,21 @@ const checkout = (request, response) => {
   })
 }
 
+const query = (request, response) => {
+  console.log(request.body.query)
+  const queryString = request.body.query
+  pool.query(queryString, (error, results)=>{
+    if (error) {
+        response.status(400).json(error)
+      }
+      else{
+        console.log(results)
+        response.status(200).json(results.rows)
+      }
+})
+}
+
 
 module.exports={
-    getUsers, searchQuery, checkout
+    getUsers, searchQuery, checkout, query
 }

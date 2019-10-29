@@ -1,1 +1,25 @@
-<p>check-in works!</p>
+<div class="example-container">
+        <h2>Search for a user, by name, card id, or isbn of book checked out</h2>
+        <mat-form-field>
+          <input #searchString matInput placeholder="Search Query" (keyup.enter)="search(searchString.value)">
+        </mat-form-field>
+        <button (click)="search(searchString.value)" mat-raised-button color="primary">Search!</button>
+      </div>
+    
+    <!-- <div *ngIf="shouldShowCheckout">
+        <mat-form-field>
+          <input #cardNo matInput placeholder="Card Number">
+        </mat-form-field>
+        <button (click)="isAbleToCheckout(cardNo.value)" mat-raised-button color="primary">Checkout!</button>
+        {{message}}
+    </div> -->
+    
+    <div *ngFor= "let result of results">
+        {{result.isbn}}
+        {{result.first_name}}
+        {{result.last_name}}
+        {{result.title}}
+        {{result.borrower_id}}
+        {{result.loan_id}}
+        <button (click)="checkIn(result.loan_id)" mat-raised-button color="primary" >Check In</button>
+    </div>
