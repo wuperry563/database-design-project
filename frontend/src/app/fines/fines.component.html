@@ -1,0 +1,17 @@
+<p>fines works!</p>
+
+<mat-form-field>
+        <input #searchString matInput placeholder="Mark Loanid as Paid" (keyup.enter)="markAsPaid(searchString.value)">
+      </mat-form-field>
+      <button (click)="markAsPaid(searchString.value)" mat-raised-button color="primary">Mark as Paid!</button>
+{{markResult}}
+<button (click)="updateAllFines()" mat-raised-button color="primary">Update Fines</button>
+<button (click)="getFines()" mat-raised-button color="primary">Get Fines</button>
+<button (click)="getUnpaidFines()" mat-raised-button color="primary">Get Unpaid fines only</button>
+
+<div *ngFor= "let result of results">
+    {{result.borrower_id}}
+    {{result.sum}}
+    <div *ngIf="result.paid">paid</div>
+    <button (click)="markAsPaid(result.isbn)" *ngIf="!result.paid" mat-raised-button color="primary" >Mark as Paid</button>
+</div>

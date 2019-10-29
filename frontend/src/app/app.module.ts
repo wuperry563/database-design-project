@@ -15,6 +15,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { CheckInComponent } from './check-in/check-in.component';
 import { SearchBookComponent } from './search-book/search-book.component';
 import { BorrowerComponent } from './borrower/borrower.component';
+import { FinesComponent } from './fines/fines.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { BorrowerComponent } from './borrower/borrower.component';
     SearchResultsComponent,
     CheckInComponent,
     SearchBookComponent,
-    BorrowerComponent
+    BorrowerComponent,
+    FinesComponent
   ],
   imports: [
     BrowserModule,
